@@ -1,0 +1,42 @@
+{
+  "OPEN_BROWSER": [
+    "open browser",
+    "launch browser",
+    "start browser",
+    "open edge",
+    "launch edge"
+  ],
+  "SHUTDOWN": [
+    "shutdown",
+    "shutdown pc",
+    "turn off pc",
+    "power off"
+  ],
+  "EXIT": [
+    "exit",
+    "quit",
+    "close assistant",
+    "bye"
+  ],
+  "DISABLE_AUTO_CONFIRM": [
+  "disable always allow",
+  "disable always",
+  "disable auto confirm",
+  "remove always allow",
+  "remove always",
+  "stop always allow",
+  "stop always"
+  ],
+  "RESET_ALL_TRUST": [
+    "reset trust",
+    "reset all trust",
+    "clear trusted intents"
+  ],
+  "SHOW_TRUSTED_INTENTS": [
+    "show trusted intents",
+    "list trusted intents",
+    "show allowed commands",
+    "what have you allowed",
+    "what do you trust"
+  ]
+}
