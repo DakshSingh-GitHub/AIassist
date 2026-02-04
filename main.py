@@ -4,6 +4,7 @@ from core.executor import execute, SAFE_INTENTS
 from core.memory import init_db, get_most_used_intent, allow_auto_confirmation, is_auto_confirmed, get_intent_count
 
 CONFIDENCE_THRESHOLD = 7
+VOICE_MODE = True
 
 def confirm_best_guess(intent: str):
 	if is_auto_confirmed(intent):
@@ -24,7 +25,11 @@ def main():
 	init_db()
 
 	while running:
-		command = listener()
+		command = listener("voice" if VOICE_MODE else "text")
+
+		if not command:
+			continue
+
 		intent = get_intent(command)
 		if intent == "UNKNOWN":
 			suggestions = suggest_intents(command)
