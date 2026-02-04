@@ -19,3 +19,11 @@ def open_browser():
 
 def shutdown():
 	os.system("shutdown /s /t 5")
+
+def open_app(app_name):
+	from core.nlp import KNOWN_APPS
+	import subprocess
+
+	url = KNOWN_APPS.get(app_name)
+	if url:
+		subprocess.Popen(["C:/Program Files (x86)/Microsoft/Edge/Application/msedge", url])

@@ -38,5 +38,10 @@
     "show allowed commands",
     "what have you allowed",
     "what do you trust"
+  ],
+  "OPEN_APP": [
+    "open",
+    "launch",
+    "start"
   ]
 }

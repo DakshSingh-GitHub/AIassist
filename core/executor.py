@@ -1,9 +1,9 @@
 
-from skills.system_control import open_browser, shutdown
+from skills.system_control import open_browser, shutdown, open_app
 from core.memory import record_intent, remove_auto_confirm, clear_all_autoconfirm
 import os
 
-DANGEROUS_INTENT = {"SHUTDOWN"}
+DANGEROUS_INTENT = {"SHUTDOWN", "RESET_ALL_TRUST", "DISABLE_AUTO_CONFIRM"}
 SAFE_INTENTS = {"OPEN_BROWSER", "EXIT"}
 
 def confirm_action(intent:str):
@@ -36,6 +36,16 @@ def execute(intent, command = None):
 			print(f"Assistant: Disabled 'always allow' for {target}.")
 		else:
 			print("Assistant: Redo")
+
+	elif intent == "OPEN_APP":
+		from core.nlp import extract_slot
+		app = extract_slot(command, intent)
+		if not app:
+			print("Assistant: What should I open? This app doesn't exist")
+		else:
+			print(f"Assistant: Opening {app}")
+			open_app(app)
+			record_intent(intent)
 
 	elif intent == "SHOW_TRUSTED_INTENTS":
 		from core.memory import get_all_autoconfirms
