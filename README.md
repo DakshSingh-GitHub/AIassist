@@ -20,6 +20,7 @@ AIassist is a smart, console-based personal assistant written in Python. It help
 1.  Clone the repository.
 2.  Ensure you have Python 3.x installed.
 3.  No external dependencies are currently required (uses standard library `sqlite3`, `json`, `os`, `subprocess`).
+4.  Simply run the install with requirements.txt
 
 ## Usage
 
